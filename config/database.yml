@@ -22,8 +22,22 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: toy_app_development
+  adapter: postgresql
+  database: todo-app_development
+  username: jpablo
+  password: JPablo90
+  encoding: unicode
+  host: localhost
+  pool: 5
+
+test:
+  adapter: postgresql
+  database: todo-app_development
+  username: jpablo
+  password: JPablo90
+  encoding: unicode
+  host: localhost
+  pool: 5
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
